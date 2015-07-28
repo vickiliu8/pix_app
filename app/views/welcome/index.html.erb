@@ -1,0 +1,6 @@
+
+<p>Welcome <%=current_user.name%></p>
+
+<%=link_to "your photos", user_photos_path(current_user) %>
+
+<%= link_to "all photos", photos_path %>
