@@ -1,5 +1,3 @@
-<h1> All photos </h1>
-
+<h1><%= current_user.name%>'s Photos </h1>
 <%= render 'customphoto' %>
-
 <%= link_to 'add a photo', new_photo_path%>

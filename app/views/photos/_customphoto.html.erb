@@ -1,0 +1,9 @@
+<% @photos.each do |photo| %>
+	<p>caption: <%= photo.caption%></p>
+	<br>
+	<p><%=link_to "show", photo_path(photo) %></p>
+	<% if @is_owner %>
+	<p><%= link_to "edit", edit_photo_path(photo)%></p>
+	<p><%= link_to "delete", photo, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	<% end %>
+<% end %>

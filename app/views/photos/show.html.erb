@@ -1,1 +1,13 @@
 <h1><%= @photo.caption %></h1>
+<h2>taken by <%=User.find(@photo.user_id).name%></h2>
+
+<% if @is_owner %>
+<p><%= link_to "edit", edit_photo_path(@photo) %></p>
+<p><%= link_to "delete", @photo, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<% end %>
+
+<h2>Comments</h2>
+<%= render @photo.comments %>
+
+<h2>Add a comment:</h2>
+<%= render 'comments/form' %>

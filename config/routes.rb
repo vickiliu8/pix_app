@@ -7,12 +7,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
-
-
-  resources :users do
-    resources :photos
-  end
-
+  get 'my_photos', to: 'photos#my_photos'
   resources :photos do
     resources :comments
   end

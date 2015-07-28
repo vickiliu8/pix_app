@@ -1,6 +1,6 @@
 
-<p>Welcome <%=current_user.name%></p>
+<h1>Hi <%=current_user.name%>!</h1>
 
-<%=link_to "your photos", user_photos_path(current_user) %>
-
-<%= link_to "all photos", photos_path %>
+<%=link_to "View Your Photos", my_photos_path %>
+<br>
+<%= link_to "View All Photos", photos_path %>

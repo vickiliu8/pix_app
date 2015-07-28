@@ -1,0 +1,15 @@
+<div class="comments">
+	
+	<p>
+	  <strong><%= comment.name %> says:</strong>
+	  <%= comment.body %>
+	</p>
+</div>
+<% if comment.user_id == current_user.id %>
+	<p>
+	  <%= link_to 'Edit', edit_photo_comment_path(@photo, comment) %>
+	</p>
+	<p>
+	  <%= link_to 'Destroy', photo_comment_path(@photo, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+	</p>
+<%end%>
