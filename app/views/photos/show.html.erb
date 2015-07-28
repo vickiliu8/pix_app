@@ -1,13 +1,16 @@
 <h1><%= @photo.caption %></h1>
-<h2>taken by <%=User.find(@photo.user_id).name%></h2>
+<p class = "lead">taken by <%=User.find(@photo.user_id).name%></p>
 
 <% if @is_owner %>
-<p><%= link_to "edit", edit_photo_path(@photo) %></p>
-<p><%= link_to "delete", @photo, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+<div class = "btn-toolbar">
+<%= link_to "edit", edit_photo_path(@photo), :class => "btn-sm btn-info" %>
+<%= link_to "delete", @photo, :class => "btn-sm btn-info", method: :delete, data: { confirm: 'Are you sure?' } %>
+</div>
 <% end %>
 
-<h2>Comments</h2>
+<h4>Comments</h4>
+<hr class="intro-divider">
 <%= render @photo.comments %>
 
-<h2>Add a comment:</h2>
+<p>Add a comment:</p>
 <%= render 'comments/form' %>

@@ -1,6 +1,8 @@
 
 <h1>Hi <%=current_user.name%>!</h1>
 
-<%=link_to "View Your Photos", my_photos_path %>
-<br>
-<%= link_to "View All Photos", photos_path %>
+<div class = "btn-group">
+<%=link_to "View Your Photos", my_photos_path, :class => "btn-lg btn-info" %>
+
+<%= link_to "View All Photos", photos_path, :class => "btn-lg btn-info" %>
+</div>

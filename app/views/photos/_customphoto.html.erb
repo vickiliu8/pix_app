@@ -1,9 +1,12 @@
 <% @photos.each do |photo| %>
 	<p>caption: <%= photo.caption%></p>
 	<br>
-	<p><%=link_to "show", photo_path(photo) %></p>
+	<div class = "btn-toolbar">
+	<%=link_to "show", photo_path(photo),:class => "btn-sm btn-info" %>
 	<% if @is_owner %>
-	<p><%= link_to "edit", edit_photo_path(photo)%></p>
-	<p><%= link_to "delete", photo, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+	<%= link_to "edit", edit_photo_path(photo), :class => "btn-sm btn-info" %>
+	<%= link_to "delete", photo, :class => "btn-sm btn-info", method: :delete, data: { confirm: 'Are you sure?' } %>
 	<% end %>
+	</div>
+	<hr class="intro-divider">
 <% end %>

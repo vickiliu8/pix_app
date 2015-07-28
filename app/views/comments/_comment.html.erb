@@ -6,10 +6,9 @@
 	</p>
 </div>
 <% if comment.user_id == current_user.id %>
-	<p>
-	  <%= link_to 'Edit', edit_photo_comment_path(@photo, comment) %>
-	</p>
-	<p>
-	  <%= link_to 'Destroy', photo_comment_path(@photo, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-	</p>
+	<div class = "btn-toolbar">
+	  <%= link_to 'Edit', edit_photo_comment_path(@photo, comment), :class => "btn-sm btn-info" %>
+	  <%= link_to 'Destroy', photo_comment_path(@photo, comment), :class => "btn-sm btn-info", method: :delete, data: { confirm: 'Are you sure?' } %>
+	 </div>
 <%end%>
+<hr class="intro-divider">
