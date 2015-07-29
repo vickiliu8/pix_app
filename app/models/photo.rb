@@ -1,9 +1,12 @@
 class Photo < ActiveRecord::Base
-	belongs_to :users, dependent: :destroy
+	belongs_to :users
 	has_many :comments, dependent: :destroy
 
 	def liked!
-    self.likes = self.likes + 1
-    self.save
-  end
+	    self.likes = self.likes + 1
+	    self.save
+ 	end
+
+ 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png"
+ 	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end

@@ -1,4 +1,8 @@
 
+
+<p><%= image_tag @photo.avatar.url, class: "photo_img" %></p>
+<br>
+
 <div class = "photo-head">
 <h1><%= @photo.caption %></h1>
 <%= link_to_if(!@is_liked,'<i class="fa fa-heart-o"></i>'.html_safe, like_photo_path )%> <%= @photo.likes %>

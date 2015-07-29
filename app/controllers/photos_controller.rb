@@ -1,5 +1,5 @@
 class PhotosController < ApplicationController
-	before_action :check_user, only: [:edit]
+	before_action :check_user, only: [:edit, :destroy]
 	
   def index
   	@is_owner = false
@@ -74,6 +74,6 @@ class PhotosController < ApplicationController
   	 end
   end
   def photo_params
-  	params.require(:photo).permit(:caption, :public, :user_id)
+  	params.require(:photo).permit(:caption, :public, :user_id, :avatar)
   end
 end

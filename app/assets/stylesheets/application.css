@@ -17,5 +17,13 @@
   @import "font-awesome";
 
   .photo-head {
-  	display:inline;
+  	display: inline;
+  }
+
+  .index-thumb {
+  	display: inline;
+  }
+
+  .photo_img {
+  	width: 250px;
   }
