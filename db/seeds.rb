@@ -7,5 +7,6 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 puts "creating photos"
+
 Photo.create(:public => true, caption: "dog")
 Photo.create(:public => false, caption: "cat")
