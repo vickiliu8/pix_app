@@ -1,6 +1,6 @@
 class PhotosController < ApplicationController
 	before_action :check_user, only: [:edit]
-
+	
   def index
   	@is_owner = false
   	@photos = Photo.where(:public => true)
@@ -58,11 +58,18 @@ class PhotosController < ApplicationController
 		end
 	end
 
+  def like
+  	@photo = Photo.find(params[:id])
+    @photo.liked!
+    redirect_to @photo
+  end
+
   private
   def check_user
+  	@photo = Photo.find(params[:id])
   	 unless current_user.id == Photo.find(params[:id]).user_id
-  	 	flash[:alert] = "Cannot edit another users photo!"
-  	 	redirect_to 'welcome_index_path'
+  	 	flash[:alert] = "You cannot edit another users photo!"
+  	 	redirect_to @photo
 
   	 end
   end

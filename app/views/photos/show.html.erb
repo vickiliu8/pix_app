@@ -1,6 +1,11 @@
-<h1><%= @photo.caption %></h1>
-<p class = "lead">taken by <%=User.find(@photo.user_id).name%></p>
 
+<div class = "photo-head">
+<h1><%= @photo.caption %></h1>
+<%= link_to_if(!@is_liked,'<i class="fa fa-heart-o"></i>'.html_safe, like_photo_path )%> <%= @photo.likes %>
+
+</div>
+
+<p class = "lead">taken by <%=User.find(@photo.user_id).name%></p>
 <% if @is_owner %>
 <div class = "btn-toolbar">
 <%= link_to "edit", edit_photo_path(@photo), :class => "btn-sm btn-info" %>

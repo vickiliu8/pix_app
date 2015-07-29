@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get 'my_photos', to: 'photos#my_photos'
   resources :photos do
+    member do
+      get 'like'
+    end
     resources :comments
   end
   # Example of regular route:

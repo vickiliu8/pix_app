@@ -36,6 +36,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
  gem 'puma'
  gem 'simple_form'
  gem "twitter-bootstrap-rails"
+ gem 'font-awesome-less'
+ gem 'paperclip'
+ gem 'aws-sdk'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
