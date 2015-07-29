@@ -7,6 +7,9 @@ class Photo < ActiveRecord::Base
 	    self.save
  	end
 
- 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png", dependent: :destroy
+ 	has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }, :default_url => "/images/:style/missing.png", dependent: :destroy,
+ 	        :storage => :s3,
+            :bucket  => ENV['MY_BUCKET_NAME']
+            
  	validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 end
