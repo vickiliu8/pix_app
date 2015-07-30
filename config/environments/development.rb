@@ -38,13 +38,13 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-  config.paperclip_defaults = {
-    :storage => :s3,
-    s3_host_name: 's3-website-us-east-1.amazonaws.com',
-    :s3_credentials => {
-      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-   },
-   :bucket => ENV['AWS_BUCKET'],
-  }
+  # config.paperclip_defaults = {
+  #   :storage => :s3,
+  #   s3_host_name: 's3-website-us-east-1.amazonaws.com',
+  #   :s3_credentials => {
+  #     :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+  #     :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+  #  },
+  #  :bucket => ENV['AWS_BUCKET'],
+  # }
 end
