@@ -38,7 +38,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
  gem "twitter-bootstrap-rails"
  gem 'font-awesome-less'
  gem 'paperclip'
- gem 'aws-sdk'
+ gem 'aws-sdk', '< 2.0'
  gem 'therubyracer'
  gem 'less-rails'
 group :development, :test do
